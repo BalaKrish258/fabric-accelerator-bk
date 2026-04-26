@@ -88,31 +88,31 @@ DataToTimestamp = None
 
 # CELL ********************
 
-# Parameters for Testing only, should be commented off
-L1TransformInstanceID = 6214
-L1TransformID = 84
-IngestID = 57
-CustomParameters = None
-InputRawFileSystem = None
-InputRawFileFolder = None
-InputRawFile = None
-InputRawFileDelimiter = None
-InputFileHeaderFlag = None
-OutputL1CurateFileSystem = 'Tables'
-OutputL1CuratedFolder = 'Application'
-OutputL1CuratedFile = 'PaymentMethods'
-OutputL1CuratedFileDelimiter = None
-OutputL1CuratedFileFormat = None
-OutputL1CuratedFileWriteMode = None
-OutputDWStagingTable = None
-LookupColumns = None
-OutputDWTable = 'silver.Mirror_Application_PaymentMethods'
-OutputDWTableWriteMode = 'overwrite'
-ReRunL1TransformFlag = None
-WatermarkColName = None
-InputRawTable = 'WideWorldImporters-mirror.Application.PaymentMethods'
-DataFromTimestamp = '1900-01-01T00:00:00Z'
-DataToTimestamp = '2026-04-25T23:53:46Z'
+# # Parameters for Testing only, should be commented off
+# L1TransformInstanceID = 6214
+# L1TransformID = 84
+# IngestID = 57
+# CustomParameters = None
+# InputRawFileSystem = None
+# InputRawFileFolder = None
+# InputRawFile = None
+# InputRawFileDelimiter = None
+# InputFileHeaderFlag = None
+# OutputL1CurateFileSystem = 'Tables'
+# OutputL1CuratedFolder = 'Application'
+# OutputL1CuratedFile = 'PaymentMethods'
+# OutputL1CuratedFileDelimiter = None
+# OutputL1CuratedFileFormat = None
+# OutputL1CuratedFileWriteMode = None
+# OutputDWStagingTable = None
+# LookupColumns = None
+# OutputDWTable = 'silver.Mirror_Application_PaymentMethods'
+# OutputDWTableWriteMode = 'overwrite'
+# ReRunL1TransformFlag = None
+# WatermarkColName = None
+# InputRawTable = 'WideWorldImporters-mirror.Application.PaymentMethods'
+# DataFromTimestamp = '1900-01-01T00:00:00Z'
+# DataToTimestamp = '2026-04-25T23:53:46Z'
 
 # METADATA ********************
 
