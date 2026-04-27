@@ -454,7 +454,7 @@ def optimizeDelta(tableName):
   # ##########################################################################################################################################   
   # Function: optimizeDelta
   # Function that implements the compaction of small files for Delta Tables https://docs.delta.io/latest/optimizations-oss.html#language-python
-  # Also removes unused files beyond default retention period
+  # Also removes unused files beyond default retention period and runs REORG TABLE to further optimize query performance.
   # 
   # Parameters:
   # tableName = Delta lake tableName in current lakehouse
@@ -468,8 +468,16 @@ def optimizeDelta(tableName):
 
     deltaTable = DeltaTable.forName(spark,tableName)
     assert deltaTable is not None, "Delta lake table does not exist"
+
+    # Compact small files
     deltaTable.optimize().executeCompaction()
+
+    # Remove unused files beyond retention period
     deltaTable.vacuum()
+
+    # Run REORG TABLE for additional query performance optimization (Lakehouse SQL optimization)
+    spark.sql(f"REORG TABLE {tableName} APPLY (PURGE)")
+
     return
 
 # METADATA ********************
@@ -536,7 +544,7 @@ def readMirrorDBTable(
                 "fromTimeStamp and toTimeStamp must be ISO-8601 datetime strings, "
                 "e.g. '2013-01-01T00:00:00'."
             )
-        if from_dt >= to_dt:
+        if from_dt > to_dt:
             raise ValueError("fromTimeStamp must be earlier than toTimeStamp.")
 
     # Helper to safely quote identifiers (handles dashes etc.)
