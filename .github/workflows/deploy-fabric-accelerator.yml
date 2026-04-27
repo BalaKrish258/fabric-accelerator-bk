@@ -112,11 +112,13 @@ jobs:
        # Create Folders if they do not exist
         - name: Create folders if they do not exist
           run: |  
-              echo "Creating Notebook folders if they do not exist"
+              echo "Creating folders if they do not exist"
               fab exists $WORKSPACE_NAME.Workspace/elt-framework.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/elt-framework.Folder
               fab exists $WORKSPACE_NAME.Workspace/lakehouse.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/lakehouse.Folder
               fab exists $WORKSPACE_NAME.Workspace/warehouse.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/warehouse.Folder
-              
+              fab exists $WORKSPACE_NAME.Workspace/mirror.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/mirror.Folder
+
+              echo "Creating Notebook folders if they do not exist"
               fab exists $WORKSPACE_NAME.Workspace/notebook.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/notebook.Folder
               fab exists $WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder
               fab exists $WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder
@@ -131,6 +133,7 @@ jobs:
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/lakehouse.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/lakehouse.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder
+              fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/elt-framework.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/elt-framework.Folder
            
               echo "Creating RTI folders if they do not exist"
