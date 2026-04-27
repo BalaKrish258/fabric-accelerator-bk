@@ -97,11 +97,11 @@ jobs:
             set -x
             fab exists "${WORKSPACE_NAME}.Workspace/.managedidentities/${WORKSPACE_NAME}.ManagedIdentity" | grep -q true || fab create "${WORKSPACE_NAME}.Workspace/.managedidentities/${WORKSPACE_NAME}.ManagedIdentity"
 
-            applicationId=$(fab ls "${WORKSPACE_NAME}.Workspace/.managedidentities" -l | grep "${WORKSPACE_NAME}.ManagedIdentity" | awk '{print $NF}' | tr -d '\r\n')
+            wIObjId=$(fab ls "${WORKSPACE_NAME}.Workspace/.managedidentities" -l | grep "${WORKSPACE_NAME}.ManagedIdentity" | awk '{print $2}' | tr -d '\r\n')
            
-            fab acl get "${WORKSPACE_NAME}.Workspace" -q "[?principal.servicePrincipalDetails.aadAppId=='${applicationId}'] | length(@)" | grep -q '^[1-9]' \
+            fab acl get "${WORKSPACE_NAME}.Workspace" -q "[?principal.servicePrincipalDetails.aadAppId=='${wIObjId}'] | length(@)" | grep -q '^[1-9]' \
               && echo "Workspace identity already has an ACL in workspace" \
-              || fab acl set "${WORKSPACE_NAME}.Workspace" -I "$applicationId" -R contributor -f
+              || fab acl set "${WORKSPACE_NAME}.Workspace" -I "$wIObjId" -R contributor -f
             set +x
         # Delete Eventstream if it exists (TEMP WORKAROUND for issue with existing Eventstream during redeployments)
         - name: Delete Eventstream if it exists
