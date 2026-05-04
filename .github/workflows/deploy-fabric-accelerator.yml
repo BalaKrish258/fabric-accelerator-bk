@@ -359,7 +359,7 @@ jobs:
               fi
            fi
            
-           NEW_WWI_MIRROR_DB_ID=$(fab get $WORKSPACE_NAME.Workspace/wwi-mirror.MirroredDatabase -q id | tr -d '\r')
+           NEW_WWI_MIRROR_DB_ID=$(fab get $WORKSPACE_NAME.Workspace/WWI-mirror.MirroredDatabase -q id | tr -d '\r')
            echo "NEW_WWI_MIRROR_DB_ID=$NEW_WWI_MIRROR_DB_ID" >> $GITHUB_ENV
 
            echo "Files to be updated from $OLD_WWI_MIRROR_DB_ID to $NEW_WWI_MIRROR_DB_ID"
