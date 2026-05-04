@@ -365,7 +365,7 @@ jobs:
             # Poll mirroring status until no longer Initializing
             echo "Waiting for WWI-mirror to initialize..."
             while :; do
-              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$wwiMirrorId/getMirroringStatus" --show_headers)
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$NEW_WWI_MIRROR_DB_ID/getMirroringStatus" --show_headers)
               echo "$response"
               status=$(echo "$response" | jq -r '.status')
               echo "Mirroring status: $status"
@@ -375,7 +375,7 @@ jobs:
             echo "Mirroring status is now: $status"
 
             # Start Mirorring
-              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$wwiMirrorId/startMirroring" --show_headers)
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$NEW_WWI_MIRROR_DB_ID/startMirroring" --show_headers)
               echo "$response"
               status_code=$(echo "$response" | jq -r '.status_code')
               
