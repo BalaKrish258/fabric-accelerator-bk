@@ -86,6 +86,9 @@ jobs:
             fab exists .capacities/$FABRIC_CAPACITY_NAME.Capacity | grep -q true || fab create .capacities/$FABRIC_CAPACITY_NAME.Capacity -P location=$FABRIC_CAPACITY_LOCATION,sku=$FABRIC_CAPACITY_SKU,resourceGroup=$RESOURCE_GROUP,subscriptionId=${{ secrets.SUBSCRIPTION_ID }},admin=$FABRIC_CAPACITY_ADMIN_ID
             # fab ls .capacities/$FABRIC_CAPACITY_NAME.Capacity -q state | tr -d '\r' | grep -q "Inactive" || fab start .capacities/$FABRIC_CAPACITY_NAME.Capacity -f
 
+            NEW_FABRIC_CAPACITY_ID=$(fab get $WORKSPACE_NAME.Workspace -q capacityId | tr -d '\r')
+            echo "NEW_FABRIC_CAPACITY_ID=$NEW_FABRIC_CAPACITY_ID" >> $GITHUB_ENV
+
        # Create Workspace if it does not exist
         - name: Create Workspace if it does not exist
           run: |
@@ -95,6 +98,9 @@ jobs:
               fab create $WORKSPACE_NAME.Workspace -P capacityName=$FABRIC_CAPACITY_NAME
               fab acl set $WORKSPACE_NAME.Workspace -I $WORKSPACE_ADMIN_ID -R admin -f
             fi 
+
+            NEW_FABRIC_WORKSPACE_ID=$(fab get $WORKSPACE_NAME.Workspace -q id | tr -d '\r')
+            echo "NEW_FABRIC_WORKSPACE_ID=$NEW_FABRIC_WORKSPACE_ID" >> $GITHUB_ENV
 
         # Enable workspace Identity and grant contributor role
         - name: Enable workspace identity and grant contributor role
@@ -152,6 +158,9 @@ jobs:
           run: |
               fab exists $WORKSPACE_NAME.Workspace/elt-framework.Folder/$FABRIC_SQL_DB_NAME.SQLDatabase | grep -q true || fab create $WORKSPACE_NAME.Workspace/elt-framework.Folder/$FABRIC_SQL_DB_NAME.SQLDatabase
 
+              NEW_CONTROLDB_NAME=$(fab get $WORKSPACE_NAME.Workspace/$FABRIC_SQL_DB_NAME.SQLDatabase -q properties.databaseName -f | tr -d '\r')
+              echo "NEW_CONTROLDB_NAME=$NEW_CONTROLDB_NAME" >> $GITHUB_ENV
+
        # Create Fabric SQL database connection if it does not exist
         - name: Create FSQL DB Connection if it does not exist
           run: |
@@ -163,6 +172,7 @@ jobs:
                 echo "Creating connection for server: $server and database: $database"
                 fab create .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -P connectionDetails.creationMethod=SQL,connectionDetails.type=SQL,connectionDetails.parameters.server=$server,connectionDetails.parameters.database=$database,credentialDetails.type=ServicePrincipal,credentialDetails.servicePrincipalClientId=${{ secrets.ACTION_SPN_CLIENTID }},credentialDetails.servicePrincipalSecret=${{ secrets.ACTION_SPN_SECRET }},credentialDetails.tenantid=${{ secrets.TENANT_ID }} 
                 connectionID=$(fab get .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -q id| tr -d '\r')
+                echo "NEW_CONTROLDB_CONNECTION_ID=$connectionID" >> $GITHUB_ENV
                 
                 rolejson=$(jq -n --arg id "$WORKSPACE_ADMIN_ID" --arg type "${WORKSPACE_ADMIN_TYPE^}" '{"principal": {"id": $id, "type": $type}, "role": "Owner"}')         
                 echo "Assigning role to connection: $rolejson"
@@ -266,21 +276,7 @@ jobs:
               if [ "$GoldDWExists" != "*true" ]; then
                 fab create $WORKSPACE_NAME.Workspace/warehouse.Folder/$GOLD_DW.Warehouse
               fi
-        #   Replace OLD IDs with NEW IDs in workspace files
-        - name: Replace OLD IDs with NEW IDs in workspace files
-          run: |
-              NEW_FABRIC_CAPACITY_ID=$(fab get $WORKSPACE_NAME.Workspace -q capacityId | tr -d '\r')
-              echo "NEW_FABRIC_CAPACITY_ID=$NEW_FABRIC_CAPACITY_ID" >> $GITHUB_ENV
-             
-              NEW_FABRIC_WORKSPACE_ID=$(fab get $WORKSPACE_NAME.Workspace -q id | tr -d '\r')
-              echo "NEW_FABRIC_WORKSPACE_ID=$NEW_FABRIC_WORKSPACE_ID" >> $GITHUB_ENV
-             
-              NEW_CONTROLDB_NAME=$(fab get $WORKSPACE_NAME.Workspace/$FABRIC_SQL_DB_NAME.SQLDatabase -q properties.databaseName -f | tr -d '\r')
-              echo "NEW_CONTROLDB_NAME=$NEW_CONTROLDB_NAME" >> $GITHUB_ENV
-             
-              NEW_CONTROLDB_CONNECTION_ID=$(fab get .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -q id | tr -d '\r')
-              echo "NEW_CONTROLDB_CONNECTION_ID=$NEW_CONTROLDB_CONNECTION_ID" >> $GITHUB_ENV
-             
+
               NEW_BRONZE_LH_ID=$(fab get $WORKSPACE_NAME.Workspace/$BRONZE_LH.Lakehouse -q id | tr -d '\r')
               echo "NEW_BRONZE_LH_ID=$NEW_BRONZE_LH_ID" >> $GITHUB_ENV
              
@@ -290,6 +286,13 @@ jobs:
               NEW_GOLD_DW_ID=$(fab get $WORKSPACE_NAME.Workspace/$GOLD_DW.Warehouse -q id | tr -d '\r')
               echo "NEW_GOLD_DW_ID=$NEW_GOLD_DW_ID" >> $GITHUB_ENV
 
+        #   Replace OLD IDs with NEW IDs in workspace files
+        - name: Replace OLD IDs with NEW IDs in workspace files
+          run: |
+             
+              # NEW_CONTROLDB_CONNECTION_ID=$(fab get .connections/"${WORKSPACE_NAME}-${FABRIC_SQL_DB_NAME}".Connection -q id | tr -d '\r')
+              # echo "NEW_CONTROLDB_CONNECTION_ID=$NEW_CONTROLDB_CONNECTION_ID" >> $GITHUB_ENV
+        
               echo "Replacing OLD ID with NEW ID in workspace files"
 
               echo "Files to be updated from $OLD_FABRIC_CAPACITY_ID to $NEW_FABRIC_CAPACITY_ID"
