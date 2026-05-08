@@ -173,7 +173,7 @@ jobs:
         - name: Deploy WWI-mirror Database
           run: |
             #set -euo pipefail
-            set +x
+            set -x
             MirrorDBExists=$(fab exists $WORKSPACE_NAME.Workspace/WWI-mirror.MirroredDatabase | tr -d '[:space:]')
           
             if [ "$MirrorDBExists" != "*true" ]; then
@@ -225,7 +225,7 @@ jobs:
               exit 1
             fi
         
-            set -x
+            set +x
         # Create WWI-mirror database connection if it does not exist
         - name: Create WWI-mirror Connection if it does not exist
           run: |
