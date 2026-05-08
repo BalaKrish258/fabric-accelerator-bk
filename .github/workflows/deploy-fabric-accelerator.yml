@@ -203,9 +203,10 @@ jobs:
             while :; do
               response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$NEW_WWI_MIRROR_DB_ID/getMirroringStatus" --show_headers)
               echo "$response"
+              status_code=$(echo "$response" | jq -r '.status_code')
               status=$(echo "$response" | jq -r '.text.status')
               echo "Mirroring status: $status"
-              [ "$status" != "Initializing" ] && break
+              [ "$status_code" = "200" ] && [ "$status" != "Initializing" ] && break
               sleep 30
             done
             echo "Mirroring status is now: $status"
