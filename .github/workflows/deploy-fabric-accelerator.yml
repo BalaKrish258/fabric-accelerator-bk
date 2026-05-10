@@ -294,6 +294,18 @@ jobs:
               NEW_GOLD_DW_ID=$(fab get $WORKSPACE_NAME.Workspace/$GOLD_DW.Warehouse -q id | tr -d '\r')
               echo "NEW_GOLD_DW_ID=$NEW_GOLD_DW_ID" >> $GITHUB_ENV
 
+        # Install latest version of SqlPackage to deploy Gold DW
+        - name: Install SqlPackage
+          run: |
+            dotnet tool update -g microsoft.sqlpackage
+
+        # Build Gold DW Dacpac from project file
+        - name: Build Gold DW Dacpac
+          run: |
+            set -x
+            dotnet build "$WORKSPACE_NAME.Workspace/warehouse.Folder/$GOLD_DW.Warehouse"
+            set +x
+
         #   Replace OLD IDs with NEW IDs in workspace files
         - name: Replace OLD IDs with NEW IDs in workspace files
           run: |
