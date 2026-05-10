@@ -1113,6 +1113,6 @@ jobs:
       # Build Gold DW Dacpac from project file
         - name: Build Gold DW Dacpac
           run: |
-            dotnet build "${GITHUB_WORKSPACE}\workspace\warehouse\dw_gold.Warehouse\dw_gold.sqlproj"
+           dotnet build "${{ github.workspace }}\workspace\warehouse\dw_gold.Warehouse\dw_gold.sqlproj"
            
        
