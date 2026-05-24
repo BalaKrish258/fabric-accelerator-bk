@@ -294,809 +294,809 @@ jobs:
               NEW_GOLD_DW_ID=$(fab get $WORKSPACE_NAME.Workspace/$GOLD_DW.Warehouse -q id | tr -d '\r')
               echo "NEW_GOLD_DW_ID=$NEW_GOLD_DW_ID" >> $GITHUB_ENV
 
-    #     #   Replace OLD IDs with NEW IDs in workspace files
-    #     - name: Replace OLD IDs with NEW IDs in workspace files
-    #       run: |
+        #   Replace OLD IDs with NEW IDs in workspace files
+        - name: Replace OLD IDs with NEW IDs in workspace files
+          run: |
              
-    #           echo "Replacing OLD ID with NEW ID in workspace files"
+              echo "Replacing OLD ID with NEW ID in workspace files"
 
-    #           echo "Files to be updated from $OLD_FABRIC_CAPACITY_ID to $NEW_FABRIC_CAPACITY_ID"
-    #           grep --null -rl "$OLD_FABRIC_CAPACITY_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_FABRIC_CAPACITY_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_CAPACITY_ID/$NEW_FABRIC_CAPACITY_ID/g"
+              echo "Files to be updated from $OLD_FABRIC_CAPACITY_ID to $NEW_FABRIC_CAPACITY_ID"
+              grep --null -rl "$OLD_FABRIC_CAPACITY_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_FABRIC_CAPACITY_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_CAPACITY_ID/$NEW_FABRIC_CAPACITY_ID/g"
 
-    #           echo "Files to be updated from $OLD_FABRIC_WORKSPACE_ID to $NEW_FABRIC_WORKSPACE_ID"
-    #           grep --null -rl "$OLD_FABRIC_WORKSPACE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_FABRIC_WORKSPACE_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID/$NEW_FABRIC_WORKSPACE_ID/g"
+              echo "Files to be updated from $OLD_FABRIC_WORKSPACE_ID to $NEW_FABRIC_WORKSPACE_ID"
+              grep --null -rl "$OLD_FABRIC_WORKSPACE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_FABRIC_WORKSPACE_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID/$NEW_FABRIC_WORKSPACE_ID/g"
 
-    #           echo "Files to be updated from $OLD_FABRIC_WORKSPACE_ID1 to $NEW_FABRIC_WORKSPACE_ID"
-    #           grep --null -rl "$OLD_FABRIC_WORKSPACE_ID1" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_FABRIC_WORKSPACE_ID1 ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID1/$NEW_FABRIC_WORKSPACE_ID/g"
+              echo "Files to be updated from $OLD_FABRIC_WORKSPACE_ID1 to $NEW_FABRIC_WORKSPACE_ID"
+              grep --null -rl "$OLD_FABRIC_WORKSPACE_ID1" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_FABRIC_WORKSPACE_ID1 ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID1/$NEW_FABRIC_WORKSPACE_ID/g"
 
-    #           echo "Files to be updated from $OLD_CONTROLDB_NAME to $NEW_CONTROLDB_NAME"
-    #           grep --null -rl "$OLD_CONTROLDB_NAME" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_CONTROLDB_NAME ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_CONTROLDB_NAME/$NEW_CONTROLDB_NAME/g"
+              echo "Files to be updated from $OLD_CONTROLDB_NAME to $NEW_CONTROLDB_NAME"
+              grep --null -rl "$OLD_CONTROLDB_NAME" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_CONTROLDB_NAME ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_CONTROLDB_NAME/$NEW_CONTROLDB_NAME/g"
 
-    #           echo "Files to be updated from $OLD_CONTROLDB_CONNECTION_ID to $NEW_CONTROLDB_CONNECTION_ID"
-    #           grep --null -rl "$OLD_CONTROLDB_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_CONTROLDB_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_CONTROLDB_CONNECTION_ID/$NEW_CONTROLDB_CONNECTION_ID/g"
+              echo "Files to be updated from $OLD_CONTROLDB_CONNECTION_ID to $NEW_CONTROLDB_CONNECTION_ID"
+              grep --null -rl "$OLD_CONTROLDB_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_CONTROLDB_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_CONTROLDB_CONNECTION_ID/$NEW_CONTROLDB_CONNECTION_ID/g"
 
-    #           echo "Files to be updated from $OLD_BRONZE_LH_ID to $NEW_BRONZE_LH_ID"
-    #           grep --null -rl "$OLD_BRONZE_LH_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_BRONZE_LH_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_BRONZE_LH_ID/$NEW_BRONZE_LH_ID/g"
+              echo "Files to be updated from $OLD_BRONZE_LH_ID to $NEW_BRONZE_LH_ID"
+              grep --null -rl "$OLD_BRONZE_LH_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_BRONZE_LH_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_BRONZE_LH_ID/$NEW_BRONZE_LH_ID/g"
 
-    #           echo "Files to be updated from $OLD_SILVER_LH_ID to $NEW_SILVER_LH_ID"
-    #           grep --null -rl "$OLD_SILVER_LH_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_SILVER_LH_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_SILVER_LH_ID/$NEW_SILVER_LH_ID/g"
+              echo "Files to be updated from $OLD_SILVER_LH_ID to $NEW_SILVER_LH_ID"
+              grep --null -rl "$OLD_SILVER_LH_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_SILVER_LH_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_SILVER_LH_ID/$NEW_SILVER_LH_ID/g"
 
-    #           echo "Files to be updated from $OLD_GOLD_DW_ID to $NEW_GOLD_DW_ID"
-    #           grep --null -rl "$OLD_GOLD_DW_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_GOLD_DW_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_GOLD_DW_ID/$NEW_GOLD_DW_ID/g"
+              echo "Files to be updated from $OLD_GOLD_DW_ID to $NEW_GOLD_DW_ID"
+              grep --null -rl "$OLD_GOLD_DW_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_GOLD_DW_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_GOLD_DW_ID/$NEW_GOLD_DW_ID/g"
 
-    #           echo "Files to be updated from $OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID to $WIDE_WORLD_IMPORTERS_CONNECTION_ID"
-    #           grep --null -rl "$OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID/$WIDE_WORLD_IMPORTERS_CONNECTION_ID/g"
+              echo "Files to be updated from $OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID to $WIDE_WORLD_IMPORTERS_CONNECTION_ID"
+              grep --null -rl "$OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_WIDE_WORLD_IMPORTERS_CONNECTION_ID/$WIDE_WORLD_IMPORTERS_CONNECTION_ID/g"
 
-    #           echo "Files to be updated from $OLD_WWI_MIRROR_DB_CONNECTION_ID to $NEW_WWI_MIRROR_DB_CONNECTION_ID"
-    #           grep --null -rl "$OLD_WWI_MIRROR_DB_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_WWI_MIRROR_DB_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_WWI_MIRROR_DB_CONNECTION_ID/$NEW_WWI_MIRROR_DB_CONNECTION_ID/g"
+              echo "Files to be updated from $OLD_WWI_MIRROR_DB_CONNECTION_ID to $NEW_WWI_MIRROR_DB_CONNECTION_ID"
+              grep --null -rl "$OLD_WWI_MIRROR_DB_CONNECTION_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_WWI_MIRROR_DB_CONNECTION_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_WWI_MIRROR_DB_CONNECTION_ID/$NEW_WWI_MIRROR_DB_CONNECTION_ID/g"
 
 
-    #           echo "Files to be updated with new Tenant ID"
-    #           grep --null -rl "$OLD_TENANT_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl $OLD_TENANT_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_TENANT_ID/${{ secrets.TENANT_ID }}/g"
+              echo "Files to be updated with new Tenant ID"
+              grep --null -rl "$OLD_TENANT_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl $OLD_TENANT_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_TENANT_ID/${{ secrets.TENANT_ID }}/g"
 
-    #           echo "Replacing OLD ID with NEW ID in ipynb files"
+              echo "Replacing OLD ID with NEW ID in ipynb files"
 
-    #           echo "ipynb Files to be updated from $OLD_FABRIC_WORKSPACE_ID to $NEW_FABRIC_WORKSPACE_ID"
-    #           grep --null -rl "$OLD_FABRIC_WORKSPACE_ID" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
-    #           grep --null -rl $OLD_FABRIC_WORKSPACE_ID ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID/$NEW_FABRIC_WORKSPACE_ID/g"
+              echo "ipynb Files to be updated from $OLD_FABRIC_WORKSPACE_ID to $NEW_FABRIC_WORKSPACE_ID"
+              grep --null -rl "$OLD_FABRIC_WORKSPACE_ID" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
+              grep --null -rl $OLD_FABRIC_WORKSPACE_ID ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/$OLD_FABRIC_WORKSPACE_ID/$NEW_FABRIC_WORKSPACE_ID/g"
 
-    #           echo "ipynb Files to be updated from $OLD_SILVER_LH_ID to $NEW_SILVER_LH_ID"
-    #           grep --null -rl "$OLD_SILVER_LH_ID" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
-    #           grep --null -rl $OLD_SILVER_LH_ID ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/$OLD_SILVER_LH_ID/$NEW_SILVER_LH_ID/g"
+              echo "ipynb Files to be updated from $OLD_SILVER_LH_ID to $NEW_SILVER_LH_ID"
+              grep --null -rl "$OLD_SILVER_LH_ID" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
+              grep --null -rl $OLD_SILVER_LH_ID ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/$OLD_SILVER_LH_ID/$NEW_SILVER_LH_ID/g"
 
-    #           echo "ipynb Files to be updated to $BRONZE_LH"
-    #           grep --null -rl "lh_bronze" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
-    #           grep --null -rl "lh_bronze" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/lh_bronze/$BRONZE_LH/g"
+              echo "ipynb Files to be updated to $BRONZE_LH"
+              grep --null -rl "lh_bronze" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
+              grep --null -rl "lh_bronze" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/lh_bronze/$BRONZE_LH/g"
 
-    #           echo "ipynb Files to be updated to $SILVER_LH"
-    #           grep --null -rl "lh_silver" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
-    #           grep --null -rl "lh_silver" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/lh_silver/$SILVER_LH/g"
+              echo "ipynb Files to be updated to $SILVER_LH"
+              grep --null -rl "lh_silver" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
+              grep --null -rl "lh_silver" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/lh_silver/$SILVER_LH/g"
 
-    #           echo "ipynb Files to be updated to $GOLD_DW"
-    #           grep --null -rl "dw_gold" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
-    #           grep --null -rl "dw_gold" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/dw_gold/$GOLD_DW/g"
+              echo "ipynb Files to be updated to $GOLD_DW"
+              grep --null -rl "dw_gold" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
+              grep --null -rl "dw_gold" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/dw_gold/$GOLD_DW/g"
 
-    #     # Deploy Notebooks
-    #     - name: Deploy Notebooks
-    #       run: |
+        # Deploy Notebooks
+        - name: Deploy Notebooks
+          run: |
             
-    #         fab exists $WORKSPACE_NAME.Workspace/CommonTransforms.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/CommonTransforms.Notebook" -f &
-    #         fab exists $WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook" -f &
-    #         fab exists $WORKSPACE_NAME.Workspace/entra-functions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/entra-functions.Notebook" -f &
-    #         fab exists $WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -f &
-    #         fab exists "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -f &
-    #         fab exists $WORKSPACE_NAME.Workspace/EnvSettings.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/EnvSettings.Notebook" -f &
-    #         fab exists "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" -f &
-    #         fab exists $WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook" -f &
-    #         wait
+            fab exists $WORKSPACE_NAME.Workspace/CommonTransforms.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/CommonTransforms.Notebook" -f &
+            fab exists $WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook" -f &
+            fab exists $WORKSPACE_NAME.Workspace/entra-functions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/entra-functions.Notebook" -f &
+            fab exists $WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -f &
+            fab exists "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -f &
+            fab exists $WORKSPACE_NAME.Workspace/EnvSettings.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/EnvSettings.Notebook" -f &
+            fab exists "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" -f &
+            fab exists $WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook" -f &
+            wait
 
             
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/CommonTransforms.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/DeltaLakeFunctions.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/entra.Folder/entra-functions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/entra-functions.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/L1Transform-Generic-Fabric.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/L1Transform-Generic-Fabric.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/Optimize Delta Lake Tables.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Optimize Delta Lake Tables.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/EnvSettings.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/EnvSettings.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/Unit Test CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Unit Test CommonTransforms.Notebook" --format .ipynb -f
-    #         fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/UnitTest_DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/UnitTest_DeltaLakeFunctions.Notebook" --format .ipynb -f 
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/CommonTransforms.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/DeltaLakeFunctions.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/entra.Folder/entra-functions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/entra-functions.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/L1Transform-Generic-Fabric.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/L1Transform-Generic-Fabric.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/Optimize Delta Lake Tables.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Optimize Delta Lake Tables.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/EnvSettings.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/EnvSettings.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/Unit Test CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Unit Test CommonTransforms.Notebook" --format .ipynb -f
+            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/UnitTest_DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/UnitTest_DeltaLakeFunctions.Notebook" --format .ipynb -f 
             
 
-    #         NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -q id | tr -d '\r')
-    #         echo "NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" >> $GITHUB_ENV
-    #         echo "Files to be updated from $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID to $NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID"
-    #         grep --null -rl "$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #         grep --null -rl $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/g"
+            NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -q id | tr -d '\r')
+            echo "NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" >> $GITHUB_ENV
+            echo "Files to be updated from $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID to $NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID"
+            grep --null -rl "$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+            grep --null -rl $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/g"
 
-    #         NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -q id | tr -d '\r')
-    #         echo "NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" >> $GITHUB_ENV
-    #         echo "Files to be updated from $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID to $NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID"
-    #         grep --null -rl "$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #         grep --null -rl $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/g"
+            NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -q id | tr -d '\r')
+            echo "NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" >> $GITHUB_ENV
+            echo "Files to be updated from $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID to $NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID"
+            grep --null -rl "$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+            grep --null -rl $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/g"
 
 
-    #   # Deploy Pipeline wwi-elt-framework
-    #     - name: Deploy Pipeline wwi-elt-framework
-    #       run: |
-    #         PipelineExists=$(fab exists $WORKSPACE_NAME.Workspace/wwi-elt-framework.DataPipeline| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/elt-framework/wwi-elt-framework.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/elt-framework/wwi-elt-framework.DataPipeline/.platform"| base64)
+      # Deploy Pipeline wwi-elt-framework
+        - name: Deploy Pipeline wwi-elt-framework
+          run: |
+            PipelineExists=$(fab exists $WORKSPACE_NAME.Workspace/wwi-elt-framework.DataPipeline| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/elt-framework/wwi-elt-framework.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/elt-framework/wwi-elt-framework.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/elt-framework.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg displayName "wwi-elt-framework" \
-    #                     --arg pipeline_content "$pipeline_content" \
-    #                     --arg platform "$platform" \
-    #                     --arg folderId "$folderId" \
-    #                     '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #           else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/wwi-elt-framework.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg pipeline_content "$pipeline_content" \
-    #                     --arg platform "$platform" \
-    #                     '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #           fi 
-    #           echo "$response"
-    #           status_code=$(echo "$response" | jq -r '.status_code')
-    #           if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
-    #             if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                 echo "Async operation failed during deployment." >&2
-    #                 exit 1
-    #               fi
-    #             fi
-    #           else
-    #               echo "Deployment step failed with status code: $status_code">&2
-    #               exit 1
-    #           fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/elt-framework.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg displayName "wwi-elt-framework" \
+                        --arg pipeline_content "$pipeline_content" \
+                        --arg platform "$platform" \
+                        --arg folderId "$folderId" \
+                        '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+              else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/wwi-elt-framework.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg pipeline_content "$pipeline_content" \
+                        --arg platform "$platform" \
+                        '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+              fi 
+              echo "$response"
+              status_code=$(echo "$response" | jq -r '.status_code')
+              if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+                if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                    echo "Async operation failed during deployment." >&2
+                    exit 1
+                  fi
+                fi
+              else
+                  echo "Deployment step failed with status code: $status_code">&2
+                  exit 1
+              fi
 
-    #   # Deploy Pipeline Level2 Transform
-    #     - name: Deploy Pipeline Level2 Transform
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Level2 Transform.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Level2 Transform.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Level2 Transform
+        - name: Deploy Pipeline Level2 Transform
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Level2 Transform.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Level2 Transform.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg displayName "Level2 Transform" \
-    #                     --arg pipeline_content "$pipeline_content" \
-    #                     --arg platform "$platform" \
-    #                     --arg folderId "$folderId" \
-    #                     '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg pipeline_content "$pipeline_content" \
-    #                     --arg platform "$platform" \
-    #                     '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi   
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg displayName "Level2 Transform" \
+                        --arg pipeline_content "$pipeline_content" \
+                        --arg platform "$platform" \
+                        --arg folderId "$folderId" \
+                        '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg pipeline_content "$pipeline_content" \
+                        --arg platform "$platform" \
+                        '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi   
             
-    #         echo "$response"
-    #         #Replace OLD LEVEL2 TRANSFORM PIPELINE LOGICAL ID with NEW LEVEL2 TRANSFORM PIPELINE LOGICAL ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD LEVEL2 TRANSFORM PIPELINE LOGICAL ID with NEW LEVEL2 TRANSFORM PIPELINE LOGICAL ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment. See above for details." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment. See above for details." >&2
+                      exit 1
+                  fi
+              fi
               
-    #           NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/g"
+              NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Level2 Transform.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/g"
             
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
 
-    #   # Deploy Pipeline Master Level2 Transform
-    #     - name: Deploy Pipeline Master Level2 Transform
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Master Level2 Transform.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Master Level2 Transform.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Master Level2 Transform
+        - name: Deploy Pipeline Master Level2 Transform
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Master Level2 Transform.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level2-transform/Master Level2 Transform.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #           folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder -q id | tr -d '\r')
-    #           jsonPayload=$(jq -n \
-    #             --arg displayName "Master Level2 Transform" \
-    #             --arg pipeline_content "$pipeline_content" \
-    #             --arg platform "$platform" \
-    #             --arg folderId "$folderId" \
-    #             '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #           response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #           pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline -q id | tr -d '\r')
-    #           jsonPayload=$(jq -n \
-    #             --arg pipeline_content "$pipeline_content" \
-    #             --arg platform "$platform" \
-    #             '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #           response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi  
+            if [ "$PipelineExists" != "*true" ]; then
+              folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder -q id | tr -d '\r')
+              jsonPayload=$(jq -n \
+                --arg displayName "Master Level2 Transform" \
+                --arg pipeline_content "$pipeline_content" \
+                --arg platform "$platform" \
+                --arg folderId "$folderId" \
+                '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+              pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline -q id | tr -d '\r')
+              jsonPayload=$(jq -n \
+                --arg pipeline_content "$pipeline_content" \
+                --arg platform "$platform" \
+                '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi  
             
-    #         echo "$response"
-    #         #Replace OLD MASTER LEVEL2 TRANSFORM PIPELINE LOGICAL ID with NEW MASTER LEVEL2 TRANSFORM PIPELINE LOGICAL ID in workspace files
+            echo "$response"
+            #Replace OLD MASTER LEVEL2 TRANSFORM PIPELINE LOGICAL ID with NEW MASTER LEVEL2 TRANSFORM PIPELINE LOGICAL ID in workspace files
 
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment. Exiting." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment. Exiting." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/g"
+              NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master Level2 Transform.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_MASTER_LEVEL2_TRANSFORM_PIPELINE_LOGICAL_ID/g"
             
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
      
 
-    #   # Deploy Pipeline Level1 Transform
-    #     - name: Deploy Pipeline Level1 Transform
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Level1 Transform.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Level1 Transform.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Level1 Transform
+        - name: Deploy Pipeline Level1 Transform
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Level1 Transform.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Level1 Transform.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Level1 Transform" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Level1 Transform" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
 
-    #         echo "$response"
-    #         #Replace OLD LEVEL1 TRANSFORM PIPELINE LOGICAL ID with NEW LEVEL1 TRANSFORM PIPELINE LOGICAL ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD LEVEL1 TRANSFORM PIPELINE LOGICAL ID with NEW LEVEL1 TRANSFORM PIPELINE LOGICAL ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment. Status: $status" >&2
-    #                   exit 1
-    #               fi
-    #           fi            
-    #           NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment. Status: $status" >&2
+                      exit 1
+                  fi
+              fi            
+              NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Level1 Transform.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #   # Deploy Pipeline Master Level1 Transform
-    #     - name: Deploy Pipeline Master Level1 Transform
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Master Level1 Transform.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Master Level1 Transform.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Master Level1 Transform
+        - name: Deploy Pipeline Master Level1 Transform
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Master Level1 Transform.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/level1-transform/Master Level1 Transform.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Master Level1 Transform" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')    
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers) 
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Master Level1 Transform" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')    
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers) 
+            fi
 
-    #         echo "$response"
-    #         #Replace OLD MASTER LEVEL1 TRANSFORM PIPELINE LOGICAL ID with NEW MASTER LEVEL1 TRANSFORM PIPELINE LOGICAL ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD MASTER LEVEL1 TRANSFORM PIPELINE LOGICAL ID with NEW MASTER LEVEL1 TRANSFORM PIPELINE LOGICAL ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master Level1 Transform.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID=$NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID to $NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/$NEW_MASTER_LEVEL1_TRANSFORM_PIPELINE_LOGICAL_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
               
-    #   # Deploy Pipeline Ingest ASQL Table
-    #     - name: Deploy Pipeline Ingest ASQL Table
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Ingest ASQL Table.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Ingest ASQL Table.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Ingest ASQL Table
+        - name: Deploy Pipeline Ingest ASQL Table
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Ingest ASQL Table.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Ingest ASQL Table.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Ingest ASQL Table" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')  
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Ingest ASQL Table" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')  
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
 
-    #         echo "$response"
-    #         #Replace OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID with NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID with NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID=$NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID to $NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID/$NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Ingest ASQL Table.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID=$NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID to $NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_INGEST_ASQL_PIPELINE_LOGICAL_ID/$NEW_INGEST_ASQL_PIPELINE_LOGICAL_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #   # Deploy Pipeline Master ELT ASQL
-    #     - name: Deploy Pipeline Master ELT ASQL
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Master ELT ASQL.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Master ELT ASQL.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Master ELT ASQL
+        - name: Deploy Pipeline Master ELT ASQL
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Master ELT ASQL.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/azure-sql/Master ELT ASQL.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Master ELT ASQL" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Master ELT ASQL" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
             
-    #         echo "$response"
-    #         #Replace OLD_MASTER_INGEST_ASQL_PIPELINE_ID, not LOGICAL_ID with NEW_MASTER_INGEST_ASQL_PIPELINE_ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD_MASTER_INGEST_ASQL_PIPELINE_ID, not LOGICAL_ID with NEW_MASTER_INGEST_ASQL_PIPELINE_ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" == "Failed" ]; then
-    #                   echo "Async operation failed during deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" == "Failed" ]; then
+                      echo "Async operation failed during deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           NEW_MASTER_INGEST_ASQL_PIPELINE_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_MASTER_INGEST_ASQL_PIPELINE_ID=$NEW_MASTER_INGEST_ASQL_PIPELINE_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_MASTER_INGEST_ASQL_PIPELINE_ID to $NEW_MASTER_INGEST_ASQL_PIPELINE_ID"
-    #           grep --null -rl "$OLD_MASTER_INGEST_ASQL_PIPELINE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_MASTER_INGEST_ASQL_PIPELINE_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_INGEST_ASQL_PIPELINE_ID/$NEW_MASTER_INGEST_ASQL_PIPELINE_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              NEW_MASTER_INGEST_ASQL_PIPELINE_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master ELT ASQL.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_MASTER_INGEST_ASQL_PIPELINE_ID=$NEW_MASTER_INGEST_ASQL_PIPELINE_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_MASTER_INGEST_ASQL_PIPELINE_ID to $NEW_MASTER_INGEST_ASQL_PIPELINE_ID"
+              grep --null -rl "$OLD_MASTER_INGEST_ASQL_PIPELINE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_MASTER_INGEST_ASQL_PIPELINE_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_INGEST_ASQL_PIPELINE_ID/$NEW_MASTER_INGEST_ASQL_PIPELINE_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #  # Deploy Pipeline Ingest ASQL Table
-    #     - name: Deploy Pipeline Ingest MirrorDB Table
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Ingest MirrorDB Table.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Ingest MirrorDB Table.DataPipeline/.platform"| base64)
+     # Deploy Pipeline Ingest ASQL Table
+        - name: Deploy Pipeline Ingest MirrorDB Table
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Ingest MirrorDB Table.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Ingest MirrorDB Table.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Ingest MirrorDB Table" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')  
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Ingest MirrorDB Table" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')  
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
 
-    #         echo "$response"
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #          NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID=$NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID to $NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID"
-    #           grep --null -rl "$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID/$NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+             NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID=$(fab get "$WORKSPACE_NAME.Workspace/Ingest MirrorDB Table.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID=$NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID to $NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID"
+              grep --null -rl "$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID/$NEW_INGEST_MIRRORDB_PIPELINE_LOGICAL_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #   # Deploy Pipeline Master ELT MirrorDB
-    #     - name: Deploy Pipeline Master ELT MirrorDB
-    #       run: |
-    #         PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline"| tr -d '[:space:]')
-    #         pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Master ELT MirrorDB.DataPipeline/pipeline-content.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Master ELT MirrorDB.DataPipeline/.platform"| base64)
+      # Deploy Pipeline Master ELT MirrorDB
+        - name: Deploy Pipeline Master ELT MirrorDB
+          run: |
+            PipelineExists=$(fab exists "$WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline"| tr -d '[:space:]')
+            pipeline_content=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Master ELT MirrorDB.DataPipeline/pipeline-content.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/pipeline/reusable/mirrordb/Master ELT MirrorDB.DataPipeline/.platform"| base64)
 
-    #         if [ "$PipelineExists" != "*true" ]; then
-    #             folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg displayName "Master ELT MirrorDB" \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 --arg folderId "$folderId" \
-    #                 '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
-    #         else
-    #             pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                 --arg pipeline_content "$pipeline_content" \
-    #                 --arg platform "$platform" \
-    #                 '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
+            if [ "$PipelineExists" != "*true" ]; then
+                folderId=$(fab get $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg displayName "Master ELT MirrorDB" \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    --arg folderId "$folderId" \
+                    '{"displayName": $displayName,"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines" -i "$jsonPayload" --show_headers)
+            else
+                pipelineId=$(fab get $WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                    --arg pipeline_content "$pipeline_content" \
+                    --arg platform "$platform" \
+                    '{"definition": {"parts":[{"path": "pipeline-content.json","payload": $pipeline_content,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/dataPipelines/$pipelineId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
             
-    #         echo "$response"
-    #         #Replace OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID, not LOGICAL_ID with NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID in workspace files
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            #Replace OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID, not LOGICAL_ID with NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID in workspace files
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "201" ] || [ "$status_code" = "200" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response" | jq '.'
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" == "Failed" ]; then
-    #                   echo "Async operation failed during deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response" | jq '.'
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" == "Failed" ]; then
+                      echo "Async operation failed during deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline" -q id | tr -d '\r')
-    #           echo "NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID=$NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID" >> $GITHUB_ENV
-    #           echo "Files to be updated from $OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID to $NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID"
-    #           grep --null -rl "$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID/$NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID=$(fab get "$WORKSPACE_NAME.Workspace/Master ELT MirrorDB.DataPipeline" -q id | tr -d '\r')
+              echo "NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID=$NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID" >> $GITHUB_ENV
+              echo "Files to be updated from $OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID to $NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID"
+              grep --null -rl "$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_MASTER_INGEST_MIRRORDB_PIPELINE_ID/$NEW_MASTER_INGEST_MIRRORDB_PIPELINE_ID/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #   # Create Eventhouse eh_fabricAccelerator
-    #     - name: Create Eventhouse eh_fabricAccelerator
-    #       run: |
-    #         EventhouseExists=$(fab exists "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse"| tr -d '[:space:]')
-    #         folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventhouse.Folder -q id | tr -d '\r')
-    #         eventhouse_properties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/EventhouseProperties.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/.platform"| base64)
-    #         oldLogicalId=$(jq -r '.config.logicalId' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/.platform")
+      # Create Eventhouse eh_fabricAccelerator
+        - name: Create Eventhouse eh_fabricAccelerator
+          run: |
+            EventhouseExists=$(fab exists "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse"| tr -d '[:space:]')
+            folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventhouse.Folder -q id | tr -d '\r')
+            eventhouse_properties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/EventhouseProperties.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/.platform"| base64)
+            oldLogicalId=$(jq -r '.config.logicalId' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/eh_fabricAccelerator.Eventhouse/.platform")
 
-    #         if [ "$EventhouseExists" != "*true" ]; then
-    #             jsonPayload=$(jq -n \
-    #                     --arg displayName "eh_fabricAccelerator" \
-    #                     --arg eventhouse_properties "$eventhouse_properties" \
-    #                     --arg platform "$platform" \
-    #                     --arg folderId "$folderId" \
-    #                     '{"displayName": $displayName,"definition": {"parts":[{"path": "EventhouseProperties.json","payload": $eventhouse_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventhouses" -i "$jsonPayload" --show_headers)
-    #           else
-    #             EventHouseId=$(fab get "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse" -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg eventhouse_properties "$eventhouse_properties" \
-    #                     --arg platform "$platform" \
-    #                     '{"definition": {"parts":[{"path": "EventhouseProperties.json","payload": $eventhouse_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventhouses/$EventHouseId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #           fi
+            if [ "$EventhouseExists" != "*true" ]; then
+                jsonPayload=$(jq -n \
+                        --arg displayName "eh_fabricAccelerator" \
+                        --arg eventhouse_properties "$eventhouse_properties" \
+                        --arg platform "$platform" \
+                        --arg folderId "$folderId" \
+                        '{"displayName": $displayName,"definition": {"parts":[{"path": "EventhouseProperties.json","payload": $eventhouse_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventhouses" -i "$jsonPayload" --show_headers)
+              else
+                EventHouseId=$(fab get "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse" -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg eventhouse_properties "$eventhouse_properties" \
+                        --arg platform "$platform" \
+                        '{"definition": {"parts":[{"path": "EventhouseProperties.json","payload": $eventhouse_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventhouses/$EventHouseId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+              fi
 
-    #         echo "$response"
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "200" ] || [ "$status_code" = "201" ] || [ "$status_code" = "202" ]; then
+            echo "$response"
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "200" ] || [ "$status_code" = "201" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during Eventhouse deployment." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during Eventhouse deployment." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           EventHouseId=$(fab get "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse" -q id | tr -d '\r')
-    #           echo "EventHouseId=$EventHouseId" >> $GITHUB_ENV
-    #           echo "Files to be updated from $oldLogicalId to $EventHouseId"
-    #           grep --null -rl "$oldLogicalId" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$oldLogicalId" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$oldLogicalId/$EventHouseId/g"
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1  
-    #         fi          
+              EventHouseId=$(fab get "$WORKSPACE_NAME.Workspace/eh_fabricAccelerator.Eventhouse" -q id | tr -d '\r')
+              echo "EventHouseId=$EventHouseId" >> $GITHUB_ENV
+              echo "Files to be updated from $oldLogicalId to $EventHouseId"
+              grep --null -rl "$oldLogicalId" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$oldLogicalId" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$oldLogicalId/$EventHouseId/g"
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1  
+            fi          
 
-    #     # Create KQL Database kdb_fabricEvents
-    #     - name: Create KQL Database kdb_fabricEvents
-    #       run: |
+        # Create KQL Database kdb_fabricEvents
+        - name: Create KQL Database kdb_fabricEvents
+          run: |
             
-    #         KqlDatabaseExists=$(fab exists "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KQLDatabase"| tr -d '[:space:]')
-    #         folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventhouse.Folder -q id | tr -d '\r')
-    #         databaseProperties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/DatabaseProperties.json"| base64)
-    #         databaseSchema=$(base64 -w 0 "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/DatabaseSchema.kql")
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/.platform"| base64)
-    #         oldLogicalId=$(jq -r '.config.logicalId' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/.platform")
+            KqlDatabaseExists=$(fab exists "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KQLDatabase"| tr -d '[:space:]')
+            folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventhouse.Folder -q id | tr -d '\r')
+            databaseProperties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/DatabaseProperties.json"| base64)
+            databaseSchema=$(base64 -w 0 "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/DatabaseSchema.kql")
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/.platform"| base64)
+            oldLogicalId=$(jq -r '.config.logicalId' "${GITHUB_WORKSPACE}/workspace/rti/eventhouse/kdb_fabricEvents.KQLDatabase/.platform")
 
-    #          if [ "$KqlDatabaseExists" != "*true" ]; then
-    #             jsonPayload=$(jq -n \
-    #                     --arg displayName "kdb_fabricEvents" \
-    #                     --arg databaseProperties "$databaseProperties" \
-    #                     --arg databaseSchema "$databaseSchema" \
-    #                     --arg platform "$platform" \
-    #                     --arg folderId "$folderId" \
-    #                     '{"displayName": $displayName,"definition": {"parts":[{"path": "DatabaseProperties.json","payload": $databaseProperties,"payloadType": "InlineBase64"},{"path": "DatabaseSchema.kql","payload": $databaseSchema,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases" -i "$jsonPayload" --show_headers)
-    #           else
-    #             KqlDatabaseId=$(fab get "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KqlDatabase" -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg databaseProperties "$databaseProperties" \
-    #                     --arg databaseSchema "$databaseSchema" \
-    #                     --arg platform "$platform" \
-    #                     '{"definition": {"parts":[{"path": "DatabaseProperties.json","payload": $databaseProperties,"payloadType": "InlineBase64"},{"path": "DatabaseSchema.kql","payload": $databaseSchema,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases/$KqlDatabaseId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #           fi
-    #         echo "$response"
-    #         status_code=$(echo "$response" | jq -r '.status_code')
-    #         if [ "$status_code" = "200" ] || [ "$status_code" = "201" ] || [ "$status_code" = "202" ]; then
+             if [ "$KqlDatabaseExists" != "*true" ]; then
+                jsonPayload=$(jq -n \
+                        --arg displayName "kdb_fabricEvents" \
+                        --arg databaseProperties "$databaseProperties" \
+                        --arg databaseSchema "$databaseSchema" \
+                        --arg platform "$platform" \
+                        --arg folderId "$folderId" \
+                        '{"displayName": $displayName,"definition": {"parts":[{"path": "DatabaseProperties.json","payload": $databaseProperties,"payloadType": "InlineBase64"},{"path": "DatabaseSchema.kql","payload": $databaseSchema,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases" -i "$jsonPayload" --show_headers)
+              else
+                KqlDatabaseId=$(fab get "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KqlDatabase" -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg databaseProperties "$databaseProperties" \
+                        --arg databaseSchema "$databaseSchema" \
+                        --arg platform "$platform" \
+                        '{"definition": {"parts":[{"path": "DatabaseProperties.json","payload": $databaseProperties,"payloadType": "InlineBase64"},{"path": "DatabaseSchema.kql","payload": $databaseSchema,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases/$KqlDatabaseId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+              fi
+            echo "$response"
+            status_code=$(echo "$response" | jq -r '.status_code')
+            if [ "$status_code" = "200" ] || [ "$status_code" = "201" ] || [ "$status_code" = "202" ]; then
 
-    #           if [ "$status_code" = "202" ]; then
-    #               operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
-    #               retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
-    #               sleep "$retry_after"
-    #               while :; do
-    #                   response=$(fab api -X get "/operations/$operation_id" --show_headers)
-    #                   echo "$response"
-    #                   status=$(echo "$response" | jq -r '.text.status')
-    #                   [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
-    #                   sleep "$retry_after"
-    #               done
-    #               if [ "$status" = "Failed" ]; then
-    #                   echo "Async operation failed during KQL Database creation." >&2
-    #                   exit 1
-    #               fi
-    #           fi
+              if [ "$status_code" = "202" ]; then
+                  operation_id=$(echo "$response" | jq -r '.headers["x-ms-operation-id"]')
+                  retry_after=$(echo "$response" | jq -r '.headers["Retry-After"]')
+                  sleep "$retry_after"
+                  while :; do
+                      response=$(fab api -X get "/operations/$operation_id" --show_headers)
+                      echo "$response"
+                      status=$(echo "$response" | jq -r '.text.status')
+                      [[ "$status" == "Succeeded" || "$status" == "Failed" ]] && break
+                      sleep "$retry_after"
+                  done
+                  if [ "$status" = "Failed" ]; then
+                      echo "Async operation failed during KQL Database creation." >&2
+                      exit 1
+                  fi
+              fi
 
-    #           KqlDatabaseId=$(fab get "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KqlDatabase" -q id | tr -d '\r')
-    #           echo "KqlDatabaseId=$KqlDatabaseId" >> $GITHUB_ENV
-    #           echo "Files to be updated from $oldLogicalId to $KqlDatabaseId"
-    #           grep --null -rl "$oldLogicalId" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
-    #           grep --null -rl "$oldLogicalId" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$oldLogicalId/$KqlDatabaseId/g"
+              KqlDatabaseId=$(fab get "$WORKSPACE_NAME.Workspace/kdb_fabricEvents.KqlDatabase" -q id | tr -d '\r')
+              echo "KqlDatabaseId=$KqlDatabaseId" >> $GITHUB_ENV
+              echo "Files to be updated from $oldLogicalId to $KqlDatabaseId"
+              grep --null -rl "$oldLogicalId" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+              grep --null -rl "$oldLogicalId" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$oldLogicalId/$KqlDatabaseId/g"
 
-    #           # Get KQL Service URL
-    #           KQLServiceUrl=$(fab api -X get "/workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases/$KqlDatabaseId" | jq -r '.text.properties.queryServiceUri')
-    #           echo "KQLServiceUrl=$KQLServiceUrl" >> $GITHUB_ENV
-    #         else
-    #             echo "Deployment step failed with status code: $status_code">&2
-    #             exit 1
-    #         fi
+              # Get KQL Service URL
+              KQLServiceUrl=$(fab api -X get "/workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDatabases/$KqlDatabaseId" | jq -r '.text.properties.queryServiceUri')
+              echo "KQLServiceUrl=$KQLServiceUrl" >> $GITHUB_ENV
+            else
+                echo "Deployment step failed with status code: $status_code">&2
+                exit 1
+            fi
 
-    #    # Create RTI Dashboard fabricEventsDashboard
-    #     - name: Create RTI Dashboard fabricEventsDashboard
-    #       run: |
-    #         DashboardExists=$(fab exists "$WORKSPACE_NAME.Workspace/fabricEventsDashboard.KQLDashboard"| tr -d '[:space:]')
+       # Create RTI Dashboard fabricEventsDashboard
+        - name: Create RTI Dashboard fabricEventsDashboard
+          run: |
+            DashboardExists=$(fab exists "$WORKSPACE_NAME.Workspace/fabricEventsDashboard.KQLDashboard"| tr -d '[:space:]')
             
-    #         # Update KQL Database URL
-    #         if [ -z "$KQLServiceUrl" ]; then
-    #           echo "Error: KQLServiceUrl is not set. Aborting dashboard update." >&2
-    #           exit 1
-    #         fi
-    #         jq --arg url "$KQLServiceUrl" '.dataSources[].clusterUri = $url' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json" > tmp.json && mv tmp.json "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json"
+            # Update KQL Database URL
+            if [ -z "$KQLServiceUrl" ]; then
+              echo "Error: KQLServiceUrl is not set. Aborting dashboard update." >&2
+              exit 1
+            fi
+            jq --arg url "$KQLServiceUrl" '.dataSources[].clusterUri = $url' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json" > tmp.json && mv tmp.json "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json"
             
-    #         folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/dashboard.Folder -q id | tr -d '\r')
-    #         realtimeDashboard=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/.platform"| base64)
+            folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/dashboard.Folder -q id | tr -d '\r')
+            realtimeDashboard=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/RealTimeDashboard.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/dashboard/fabricEventsDashboard.KQLDashboard/.platform"| base64)
 
 
-    #         if [ "$DashboardExists" != "*true" ]; then
-    #             jsonPayload=$(jq -n \
-    #                     --arg displayName "fabricEventsDashboard" \
-    #                     --arg realtimeDashboard "$realtimeDashboard" \
-    #                     --arg platform "$platform" \
-    #                     --arg folderId "$folderId" \
-    #                     '{"displayName": $displayName,"definition": {"parts":[{"path": "RealTimeDashboard.json","payload": $realtimeDashboard,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #             fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDashboards" -i "$jsonPayload" --show_headers
-    #           else
-    #             DashboardId=$(fab get "$WORKSPACE_NAME.Workspace/fabricEventsDashboard.KQLDashboard" -q id | tr -d '\r')
-    #             jsonPayload=$(jq -n \
-    #                     --arg realtimeDashboard "$realtimeDashboard" \
-    #                     --arg platform "$platform" \
-    #                     '{"definition": {"parts":[{"path": "RealTimeDashboard.json","payload": $realtimeDashboard,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #             fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDashboards/$DashboardId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers
-    #           fi
+            if [ "$DashboardExists" != "*true" ]; then
+                jsonPayload=$(jq -n \
+                        --arg displayName "fabricEventsDashboard" \
+                        --arg realtimeDashboard "$realtimeDashboard" \
+                        --arg platform "$platform" \
+                        --arg folderId "$folderId" \
+                        '{"displayName": $displayName,"definition": {"parts":[{"path": "RealTimeDashboard.json","payload": $realtimeDashboard,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+                fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDashboards" -i "$jsonPayload" --show_headers
+              else
+                DashboardId=$(fab get "$WORKSPACE_NAME.Workspace/fabricEventsDashboard.KQLDashboard" -q id | tr -d '\r')
+                jsonPayload=$(jq -n \
+                        --arg realtimeDashboard "$realtimeDashboard" \
+                        --arg platform "$platform" \
+                        '{"definition": {"parts":[{"path": "RealTimeDashboard.json","payload": $realtimeDashboard,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+                fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/kqlDashboards/$DashboardId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers
+              fi
 
-    #     # Deploy EvenStream es_fabricEvents
-    #     - name: Deploy EvenStream es_fabricEvents
-    #       run: |
-    #         EventStreamExists=$(fab exists "$WORKSPACE_NAME.Workspace/es_fabricEvents.EventStream"| tr -d '[:space:]')
-    #         folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventstream.Folder -q id | tr -d '\r')
-    #         eventstream=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/eventstream.json"| base64)
-    #         eventstream_properties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/eventstreamProperties.json"| base64)
-    #         platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/.platform"| base64)
+        # Deploy EvenStream es_fabricEvents
+        - name: Deploy EvenStream es_fabricEvents
+          run: |
+            EventStreamExists=$(fab exists "$WORKSPACE_NAME.Workspace/es_fabricEvents.EventStream"| tr -d '[:space:]')
+            folderId=$(fab get $WORKSPACE_NAME.Workspace/rti.Folder/eventstream.Folder -q id | tr -d '\r')
+            eventstream=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/eventstream.json"| base64)
+            eventstream_properties=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/eventstreamProperties.json"| base64)
+            platform=$(jq '.' "${GITHUB_WORKSPACE}/workspace/rti/eventstream/es_fabricEvents.Eventstream/.platform"| base64)
             
-    #         if [ "$EventStreamExists" != "*true" ]; then
-    #           jsonPayload=$(jq -n \
-    #                       --arg displayName "es_fabricEvents" \
-    #                       --arg eventstream "$eventstream" \
-    #                       --arg eventstream_properties "$eventstream_properties" \
-    #                       --arg platform "$platform" \
-    #                       --arg folderId "$folderId" \
-    #                       '{"displayName": $displayName,"definition": {"parts":[{"path": "eventstream.json","payload": $eventstream,"payloadType": "InlineBase64"},{"path": "eventstreamProperties.json","payload": $eventstream_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
-    #           response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventStreams" -i "$jsonPayload" --show_headers)
-    #         else
-    #           EventStreamId=$(fab get "$WORKSPACE_NAME.Workspace/es_fabricEvents.EventStream" -q id | tr -d '\r')
-    #           jsonPayload=$(jq -n \
-    #                       --arg eventstream "$eventstream" \
-    #                       --arg eventstream_properties "$eventstream_properties" \
-    #                       --arg platform "$platform" \
-    #                       '{"definition": {"parts":[{"path": "eventstream.json","payload": $eventstream,"payloadType": "InlineBase64"},{"path": "eventstreamProperties.json","payload": $eventstream_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
-    #           response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventStreams/$EventStreamId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
-    #         fi
-    #         echo "$response"
-      # Logout
-        - name: Logout of Fabric
+            if [ "$EventStreamExists" != "*true" ]; then
+              jsonPayload=$(jq -n \
+                          --arg displayName "es_fabricEvents" \
+                          --arg eventstream "$eventstream" \
+                          --arg eventstream_properties "$eventstream_properties" \
+                          --arg platform "$platform" \
+                          --arg folderId "$folderId" \
+                          '{"displayName": $displayName,"definition": {"parts":[{"path": "eventstream.json","payload": $eventstream,"payloadType": "InlineBase64"},{"path": "eventstreamProperties.json","payload": $eventstream_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventStreams" -i "$jsonPayload" --show_headers)
+            else
+              EventStreamId=$(fab get "$WORKSPACE_NAME.Workspace/es_fabricEvents.EventStream" -q id | tr -d '\r')
+              jsonPayload=$(jq -n \
+                          --arg eventstream "$eventstream" \
+                          --arg eventstream_properties "$eventstream_properties" \
+                          --arg platform "$platform" \
+                          '{"definition": {"parts":[{"path": "eventstream.json","payload": $eventstream,"payloadType": "InlineBase64"},{"path": "eventstreamProperties.json","payload": $eventstream_properties,"payloadType": "InlineBase64"},{"path": ".platform","payload": $platform,"payloadType": "InlineBase64"}]}}')
+              response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventStreams/$EventStreamId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
+            fi
+            echo "$response"
+      Logout
+        - name: Fabric Logout
           run: fab auth logout
   deploy-golddw:
     runs-on: windows-latest
@@ -1159,15 +1159,6 @@ jobs:
             "gold_dw_connection_string=$GOLD_DW_CONNECTION_STRING" >> $env:GITHUB_OUTPUT
 
        # Deploy using the dacpac from previous step
-        - name: Validate Gold DW connection string output
-          shell: pwsh
-          run: |
-            $cs = "${{ steps.get_golddw_connection_string.outputs.gold_dw_connection_string }}"
-            if ([string]::IsNullOrWhiteSpace($cs)) {
-              throw "gold_dw_connection_string output is empty"
-            }
-            echo "Gold DW connection string output is present"
-
         - name: Deploy Gold DW
           uses: Azure/sql-action@v2.3
           with:
@@ -1177,7 +1168,7 @@ jobs:
             skip-firewall-check: true
 
       # Logout
-        - name: Logout of Fabric
+        - name: Fabric Logout
           run: fab auth logout
 
         - name: Azure Logout
