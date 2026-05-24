@@ -367,10 +367,48 @@ jobs:
               grep --null -rl "dw_gold" "${GITHUB_WORKSPACE}/ipynb" | tr '\0' '\n'
               grep --null -rl "dw_gold" ${GITHUB_WORKSPACE}/ipynb | xargs -0 sed -i "s/dw_gold/$GOLD_DW/g"
 
-        # Deploy Notebooks
+        # # Deploy Notebooks
+        # - name: Deploy Notebooks
+        #   run: |
+            
+        #     fab exists $WORKSPACE_NAME.Workspace/CommonTransforms.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/CommonTransforms.Notebook" -f &
+        #     fab exists $WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook" -f &
+        #     fab exists $WORKSPACE_NAME.Workspace/entra-functions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/entra-functions.Notebook" -f &
+        #     fab exists $WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -f &
+        #     fab exists "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -f &
+        #     fab exists $WORKSPACE_NAME.Workspace/EnvSettings.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/EnvSettings.Notebook" -f &
+        #     fab exists "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/Unit Test CommonTransforms.Notebook" -f &
+        #     fab exists $WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook" -f &
+        #     wait
+
+            
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/CommonTransforms.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/DeltaLakeFunctions.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/entra.Folder/entra-functions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/entra-functions.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/L1Transform-Generic-Fabric.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/L1Transform-Generic-Fabric.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/Optimize Delta Lake Tables.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Optimize Delta Lake Tables.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/EnvSettings.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/EnvSettings.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/Unit Test CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Unit Test CommonTransforms.Notebook" --format .ipynb -f
+        #     fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/UnitTest_DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/UnitTest_DeltaLakeFunctions.Notebook" --format .ipynb -f 
+            
+
+        #     NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -q id | tr -d '\r')
+        #     echo "NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" >> $GITHUB_ENV
+        #     echo "Files to be updated from $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID to $NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID"
+        #     grep --null -rl "$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+        #     grep --null -rl $OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID/g"
+
+        #     NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/L1Transform-Generic-Fabric.Notebook" -q id | tr -d '\r')
+        #     echo "NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID=$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" >> $GITHUB_ENV
+        #     echo "Files to be updated from $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID to $NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID"
+        #     grep --null -rl "$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
+        #     grep --null -rl $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/g"
+
+
         - name: Deploy Notebooks
           run: |
-            
+            set -euo pipefail
+
             fab exists $WORKSPACE_NAME.Workspace/CommonTransforms.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/CommonTransforms.Notebook" -f &
             fab exists $WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/DeltaLakeFunctions.Notebook" -f &
             fab exists $WORKSPACE_NAME.Workspace/entra-functions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/entra-functions.Notebook" -f &
@@ -381,16 +419,38 @@ jobs:
             fab exists $WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook | grep -q true && fab rm "$WORKSPACE_NAME.Workspace/UnitTest_DeltaLakeFunctions.Notebook" -f &
             wait
 
-            
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/CommonTransforms.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/DeltaLakeFunctions.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/entra.Folder/entra-functions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/entra-functions.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/L1Transform-Generic-Fabric.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/L1Transform-Generic-Fabric.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/Optimize Delta Lake Tables.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Optimize Delta Lake Tables.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/EnvSettings.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/EnvSettings.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/Unit Test CommonTransforms.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/Unit Test CommonTransforms.Notebook" --format .ipynb -f
-            fab import "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/UnitTest_DeltaLakeFunctions.Notebook" -i "${GITHUB_WORKSPACE}/ipynb/UnitTest_DeltaLakeFunctions.Notebook" --format .ipynb -f 
-            
+            sleep 30
+
+            import_with_retry() {
+              local target="$1"
+              local input="$2"
+              local attempts=10
+              local delay=30
+              local i=1
+
+              while [ $i -le $attempts ]; do
+                echo "Import attempt $i/$attempts for $target"
+                if fab import "$target" -i "$input" --format .ipynb -f; then
+                  return 0
+                fi
+                if [ $i -lt $attempts ]; then
+                  sleep $delay
+                fi
+                i=$((i+1))
+              done
+
+              echo "Failed to import $target after $attempts attempts" >&2
+              exit 1
+            }
+
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/CommonTransforms.Notebook" "${GITHUB_WORKSPACE}/ipynb/CommonTransforms.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/DeltaLakeFunctions.Notebook" "${GITHUB_WORKSPACE}/ipynb/DeltaLakeFunctions.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/entra.Folder/entra-functions.Notebook" "${GITHUB_WORKSPACE}/ipynb/entra-functions.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/L1Transform-Generic-Fabric.Notebook" "${GITHUB_WORKSPACE}/ipynb/L1Transform-Generic-Fabric.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/level1-transform.Folder/Optimize Delta Lake Tables.Notebook" "${GITHUB_WORKSPACE}/ipynb/Optimize Delta Lake Tables.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/EnvSettings.Notebook" "${GITHUB_WORKSPACE}/ipynb/EnvSettings.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/common-pyspark.Folder/Unit Test CommonTransforms.Notebook" "${GITHUB_WORKSPACE}/ipynb/Unit Test CommonTransforms.Notebook"
+            import_with_retry "$WORKSPACE_NAME.Workspace/notebook.Folder/reusable.Folder/delta-lake.Folder/UnitTest_DeltaLakeFunctions.Notebook" "${GITHUB_WORKSPACE}/ipynb/UnitTest_DeltaLakeFunctions.Notebook"
 
             NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$(fab get "$WORKSPACE_NAME.Workspace/Optimize Delta Lake Tables.Notebook" -q id | tr -d '\r')
             echo "NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID=$NEW_OPTIMIZE_DELTA_TABLES_NOTEBOOK_ID" >> $GITHUB_ENV
@@ -403,7 +463,6 @@ jobs:
             echo "Files to be updated from $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID to $NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID"
             grep --null -rl "$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
             grep --null -rl $OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/$NEW_L1_TRANSFORM_GENERIC_NOTEBOOK_ID/g"
-
 
       # Deploy Pipeline wwi-elt-framework
         - name: Deploy Pipeline wwi-elt-framework
