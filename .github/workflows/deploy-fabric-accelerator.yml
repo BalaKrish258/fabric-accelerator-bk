@@ -1099,8 +1099,8 @@ jobs:
       # Logout
         - name: Fabric Logout
           run: fab auth logout
-          
-  deploy-golddw:
+
+  update-gold-dw:
     runs-on: windows-latest
     needs: deploy-fabric-accelerator
     env:
