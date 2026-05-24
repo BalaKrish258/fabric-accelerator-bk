@@ -1095,7 +1095,8 @@ jobs:
               response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/eventStreams/$EventStreamId/updateDefinition?updateMetadata=True" -i "$jsonPayload" --show_headers)
             fi
             echo "$response"
-      Logout
+            
+      # Logout
         - name: Fabric Logout
           run: fab auth logout
   deploy-golddw:
