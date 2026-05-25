@@ -191,13 +191,13 @@ jobs:
        # Deploy WWI-mirror Database
         - name: Deploy WWI-mirror Database
           run: |
-            MirrorDBExists=$(fab exists $WORKSPACE_NAME.Workspace/WWI-mirror.MirroredDatabase | tr -d '[:space:]')
+            MirrorDBExists=$(fab exists $WORKSPACE_NAME.Workspace/WideWorldImporters-mirror.MirroredDatabase | tr -d '[:space:]')
           
             if [ "$MirrorDBExists" != "*true" ]; then
                 mirroring=$(jq '.' "${GITHUB_WORKSPACE}/workspace/mirror/WideWorldImporters-mirror.MirroredDatabase/mirroring.json" | base64)
                 folderId=$(fab get $WORKSPACE_NAME.Workspace/mirror.Folder -q id | tr -d '\r')
                 jsonPayload=$(jq -n \
-                          --arg displayName "WWI-mirror" \
+                          --arg displayName "WideWorldImporters-mirror" \
                           --arg payload "$mirroring" \
                           --arg folderId "$folderId" \
                           '{"displayName": $displayName,"definition": {"parts":[{"path": "mirroring.json","payload": $payload,"payloadType": "InlineBase64"}]},"folderId": $folderId}')
@@ -206,17 +206,17 @@ jobs:
                 status_code=$(echo "$response" | jq -r '.status_code')
                 
                 if [ "$status_code" = "201" ]; then
-                  echo "WWI-mirror Database deployed successfully."
+                  echo "WideWorldImporters-mirror Database deployed successfully."
                 else
-                  echo "Deployment of WWI-mirror Database failed with status code: $status_code">&2
+                  echo "Deployment of WideWorldImporters-mirror Database failed with status code: $status_code">&2
                   exit 1
                 fi
             fi
             
-            NEW_WWI_MIRROR_DB_ID=$(fab get $WORKSPACE_NAME.Workspace/WWI-mirror.MirroredDatabase -q id | tr -d '\r')
+            NEW_WWI_MIRROR_DB_ID=$(fab get $WORKSPACE_NAME.Workspace/WideWorldImporters-mirror.MirroredDatabase -q id | tr -d '\r')
 
             # Poll mirroring status until no longer Initializing
-            echo "Waiting for WWI-mirror to initialize..."
+            echo "Waiting for WideWorldImporters-mirror to initialize..."
             while :; do
               response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$NEW_WWI_MIRROR_DB_ID/getMirroringStatus" --show_headers)
               echo "$response"
@@ -229,27 +229,27 @@ jobs:
             echo "Mirroring status is now: $status"
 
             # Start Mirroring
-            echo "Starting WWI-mirror..."
+            echo "Starting WideWorldImporters-mirror..."
             response=$(fab api -X post "workspaces/$NEW_FABRIC_WORKSPACE_ID/mirroredDatabases/$NEW_WWI_MIRROR_DB_ID/startMirroring" --show_headers)
             echo "$response"
             status_code=$(echo "$response" | jq -r '.status_code')
 
             if [ "$status_code" = "200" ]; then
-              echo "WWI-mirror Database mirroring started successfully."
+              echo "WideWorldImporters-mirror Database mirroring started successfully."
             else
-              echo "Starting mirroring for WWI-mirror Database failed with status code: $status_code">&2
+              echo "Starting mirroring for WideWorldImporters-mirror Database failed with status code: $status_code">&2
               exit 1
             fi
 
-        # Create WWI-mirror database connection if it does not exist
-        - name: Create WWI-mirror Connection if it does not exist
+        # Create WideWorldImporters-mirror database connection if it does not exist
+        - name: Create WideWorldImporters-mirror Connection if it does not exist
           run: |
             MirrorASQLConnExists=$(fab exists .connections/"${WORKSPACE_NAME}-WWI-mirror".Connection | tr -d '[:space:]')
             echo "MirrorASQLConnExists: $MirrorASQLConnExists"
 
             if [ "$MirrorASQLConnExists" != "*true" ]; then
-              server=$(fab get $WORKSPACE_NAME.Workspace/WWI-mirror.MirroredDatabase -q properties.sqlEndpointProperties.connectionString | tr -d '\r')
-              database="WWI-mirror"
+              server=$(fab get $WORKSPACE_NAME.Workspace/WideWorldImporters-mirror.MirroredDatabase -q properties.sqlEndpointProperties.connectionString | tr -d '\r')
+              database="WideWorldImporters-mirror"
               fab create .connections/"${WORKSPACE_NAME}-WWI-mirror".Connection \
                 -P connectionDetails.creationMethod=SQL,connectionDetails.type=SQL,connectionDetails.parameters.server=$server,connectionDetails.parameters.database=$database
 
