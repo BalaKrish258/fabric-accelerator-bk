@@ -17,6 +17,17 @@
 
 # CELL ********************
 
+spark.conf.set("spark.native.enabled", "true")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 %run /commonTransforms
 
 # METADATA ********************
@@ -135,7 +146,6 @@ if (
     and InputRawTable is None
 ):
     df = readFile('bronze', InputRawFileSystem, InputRawFileFolder, InputRawFile)
-
 # Input is Mirrored Table
 elif (
     InputRawFileSystem is None
@@ -145,6 +155,7 @@ elif (
     and "mirror" in InputRawTable.lower()
 ):
     # Split the table name into database, schema, and table parts
+    
     parts = InputRawTable.split(".")
     mirrorDBName, schemaName, tableName = parts[0], parts[1], parts[2]
     mirrorDBWorkspace = notebookutils.runtime.context.get("defaultLakehouseWorkspaceName")
