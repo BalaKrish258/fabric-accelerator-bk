@@ -356,7 +356,7 @@ jobs:
               grep --null -rl "$OLD_TENANT_ID" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
               grep --null -rl $OLD_TENANT_ID ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/$OLD_TENANT_ID/${{ secrets.TENANT_ID }}/g"
 
-              echo "ipynb Files to be updated to $SILVER_LH"
+              echo "Files to be updated from lh_silver to $SILVER_LH"
               grep --null -rl "lh_silver" "${GITHUB_WORKSPACE}/workspace" | tr '\0' '\n'
               grep --null -rl "lh_silver" ${GITHUB_WORKSPACE}/workspace | xargs -0 sed -i "s/lh_silver/$SILVER_LH/g"
 
