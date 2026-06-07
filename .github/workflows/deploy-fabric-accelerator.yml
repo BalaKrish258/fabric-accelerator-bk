@@ -147,7 +147,6 @@ jobs:
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/azure-sql.Folder
-              fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/lakehouse.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/lakehouse.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level1-transform.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/level2-transform.Folder
               fab exists $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder | grep -q true || fab create $WORKSPACE_NAME.Workspace/pipeline.Folder/reusable.Folder/mirrordb.Folder
